@@ -1,0 +1,171 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --shadow-color: rgb(224, 224, 224)
+
+}
+
+.btn {
+    padding:.5em .9em;
+    outline: none;
+    border:none;
+    color: #000;
+    border-radius: .4em;
+    cursor: pointer;
+}
+
+.btn-active {
+    border: 2px solid rgb(0, 0, 0);
+    background: transparent;
+    transition: background, 0.1s ease;
+}
+
+.btn-active:hover {
+    background: rgba(155, 155, 155, 0.116);
+}
+
+.wrapper1, .wrapper2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    border:1px solid black;
+
+}
+
+.wrapper1 {
+    width:fit-content;
+    margin:1em auto;
+}
+
+.wrapper2 {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding:0 1em;
+}
+
+.grid-container {
+    /* border:2px solid black; */
+    display: grid;
+    padding:0.25em;
+    border-radius: 1em;
+    box-shadow: 1px 0 10px var(--shadow-color), 0 1px 10px var(--shadow-color), 
+                -1px 0 10px var(--shadow-color), 0 -1px 10px var(--shadow-color);
+}
+
+.grid1 {
+    margin:1em 0;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    width:270px;
+    height:270px;
+}
+
+.grid2 {
+    margin:20px auto;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    width:450px;
+    height:450px;
+    position: relative;
+}
+
+.black-border {
+    position: absolute;
+    width: calc(270px - 3px);
+    height: calc(270px - 3px);
+    border:3px solid black;
+    z-index: -2;
+    top: calc(90px + 1.5px);
+    left: calc(90px + 1.5px);
+    border-radius: 1rem;
+
+}
+
+.heading {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.item-empty, .new-item-empty {
+    /* border:1px solid rgb(0, 0, 0); */
+    background-color: rgb(48, 48, 48);
+    border-radius: 1em;
+    margin:0.1em;
+
+}
+
+.item, .new-item {
+    border-radius: 1em;
+    width:100%;
+    height:100%;
+}
+
+
+.timers {
+    width:18%;
+    min-width: 250px;
+    border:1px solid black;
+    padding:.5em;
+    border-radius: .5em;
+    text-align: center;
+    font-size: 1.5rem;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 0.4em;
+}
+
+.time {
+    display:flex;
+    align-items: center;
+    /* border:1px solid black; */
+    justify-content: center;
+    margin:1em 0;
+}
+
+.time .iconify {
+    font-size: 2rem;
+    margin:0 0.1em;
+}
+
+.buttons {
+    margin:1em auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.buttons button {
+    font-size: 1.25rem;
+    margin:.25em;
+}
+
+
+.display-content {
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background: rgb(0, 0, 0, 0.7);
+    height:100%;
+    border-radius: 1rem;
+}
+
+.moves {
+    margin:1em 0;
+    display: flex;
+    /* border:1px solid black; */
+}
+
+.black-border .btn {
+    color: white;
+    border:1px solid white;
+}

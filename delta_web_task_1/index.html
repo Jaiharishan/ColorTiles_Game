@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    </head>
+    <body>
+        <div class="wrapper2">
+            <div class="timers">
+                <div class="time">
+                    <span class="iconify" data-icon="bx:bxs-time-five" data-inline="false"></span>
+                    <p><span id="seconds">00</span> <span>:</span> <span id="tens">00</span></p>
+                </div>
+                
+                <div class="moves">Moves: <p class="moves-num">0</p></div>
+            </div>
+            <div class="grid-container grid2">
+
+                <div class="black-border">
+                    <div class="display-content">
+                        <h2 class="heading">Game Over!</h2>
+                        <div class="buttons">
+                            <button class="btn btn-active" id="try-again" onclick="restart();shuffleEd();randomGrid()">Try again</button>
+                            <button class="btn btn-active">continue</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+                <div class="item-empty empty">
+                   <!-- this one is the empty grid -->
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>         
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div>
+                </div>
+                <div class="item-empty">
+                    <div class="item"></div> 
+                </div>
+            </div>
+
+            <div class="grid-container grid1">
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+                <div class="new-item-empty">
+                    <div class="new-item"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="wrapper1">
+            <div class="buttons">
+                <button class="btn btn-active" id="start-btn" onclick="start()">Start</button>
+                <button class="btn btn-active" id="end-btn" onclick="end()">Stop</button>
+                <button class="btn btn-active" id="reset-btn" onclick="restart();shuffleEd();randomGrid()">Reset</button>
+            </div>
+        </div>
+        
+    
+
+        <script src="main.js"></script>
+    </body>
+</html>
