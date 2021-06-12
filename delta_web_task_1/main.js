@@ -1,9 +1,9 @@
 // every required elements are here 
 
 const grid = document.getElementsByClassName('item');    // the tiles in the main grid
-var gridOuter = document.getElementsByClassName('item-empty'); // the block parent of the grid element
-var emptyGrid = document.getElementsByClassName('item-empty empty');  // the empty tile
-var newGridElmInner = document.getElementsByClassName('new-item');  // tiles in side grid
+const gridOuter = document.getElementsByClassName('item-empty'); // the block parent of the grid element
+const emptyGrid = document.getElementsByClassName('item-empty empty');  // the empty tile
+const newGridElmInner = document.getElementsByClassName('new-item');  // tiles in side grid
 
 // timer
 
@@ -25,6 +25,7 @@ const displayBox = document.getElementsByClassName('black-border');  // this box
 const displayContent = document.getElementsByClassName('display-content'); // the content which is display after game ends
 
 
+// function used to shuffle an array
 const  shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -36,8 +37,8 @@ const  shuffleArray = array => {
     return array;
 }
 
-c = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5];
-k = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+var c = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5];
+var k = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 
 var d = c;
 var m = shuffleArray(k);
@@ -51,10 +52,12 @@ var colors = {
     '6': 'firebrick',
 }
 
+// shuffling the order of the array
 for (let i = 0; i < gridOuter.length; i++) {
     gridOuter[i].style.order = m[i];
 }
 
+// adding colors to the element
 for (let i = 0; i < grid.length; i++) {
     grid[i].style.backgroundColor = colors[d[i] + 1];
 }
@@ -234,9 +237,6 @@ function allowSwipe() {
 
 allowSwipe();
 setInterval(allowSwipe, 200);
-
-
-// clearSwipe();
 
 
 tryAgain.setAttribute('onclick', 'removeDisplay()');
