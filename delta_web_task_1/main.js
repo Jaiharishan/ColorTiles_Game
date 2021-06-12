@@ -7,8 +7,8 @@ const newGridElmInner = document.getElementsByClassName('new-item');  // tiles i
 
 // timer
 
-var sec = 00;
-var tens = 00;
+let sec = 00;
+let tens = 00;
 const secondsElm = document.getElementById('seconds');   // seconds span element
 const tensElm = document.getElementById('tens');  // tens span element
 
@@ -25,7 +25,6 @@ const displayBox = document.getElementsByClassName('black-border');  // this box
 const displayContent = document.getElementsByClassName('display-content'); // the content which is display after game ends
 
 
-// function used to shuffle an array
 const  shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -37,13 +36,13 @@ const  shuffleArray = array => {
     return array;
 }
 
-var c = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5];
-var k = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
+c = [0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5];
+k = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
 
-var d = c;
-var m = shuffleArray(k);
+let d = c;
+let m = shuffleArray(k);
 
-var colors = {
+let colors = {
     '1': 'darkorange',
     '2': 'dodgerblue',
     '3': 'goldenrod',
@@ -52,19 +51,17 @@ var colors = {
     '6': 'firebrick',
 }
 
-// shuffling the order of the array
 for (let i = 0; i < gridOuter.length; i++) {
     gridOuter[i].style.order = m[i];
 }
 
-// adding colors to the element
 for (let i = 0; i < grid.length; i++) {
     grid[i].style.backgroundColor = colors[d[i] + 1];
 }
 
 
 function shuffleEd() {
-    var m = shuffleArray(k);
+    let m = shuffleArray(k);
 
     for (let i = 0; i < gridOuter.length; i++) {
         gridOuter[i].style.order = m[i];
@@ -76,17 +73,17 @@ function shuffleEd() {
 // movement of tiles
 
 
-var moves = 0;
+let moves = 0;
 
 
 function swipe(gridItem) {
-    var element = document.createElement('div');
+    let element = document.createElement('div');
 
     element.setAttribute('class', 'item');
     element.setAttribute('id', gridItem.id);
     element.setAttribute('onclick', 'swipe(this);');
 
-    var elmColor = gridItem.style.backgroundColor;
+    let elmColor = gridItem.style.backgroundColor;
     element.style.backgroundColor = elmColor;
 
     emptyGrid[0].appendChild(element);
@@ -97,7 +94,7 @@ function swipe(gridItem) {
 
     // ADDING MOVES FOR EACH SHIFT OF TILES
     moves += 1;
-    var moveDiv = document.getElementsByClassName('moves');
+    let moveDiv = document.getElementsByClassName('moves');
     moveDiv[0].innerHTML = 'Moves : '+'<p>'+ moves + '</p>';
     
     gridItem.remove();
@@ -113,14 +110,15 @@ function swipe(gridItem) {
 // SETTING EVENT LISTENERS TO THE NEIGHBOURING GRIDS 
 
 function allowSwipe() {
-    var emptyElm = emptyGrid[0];
-    var pos = emptyElm.style.order;
+    let emptyElm = emptyGrid[0];
+    let pos = emptyElm.style.order;
 
-    var gridSize = 5;
+    let gridSize = 5;
 
     for (let i=0; i < gridOuter.length; i++) {
 
         // 4 CORNERS OF THE GRID
+        //  for the 5x5 grid
 
         if (pos == '0') {
             if (gridOuter[i].style.order == 1 || gridOuter[i].style.order == 5) {
@@ -129,7 +127,7 @@ function allowSwipe() {
         }
 
         if (pos == '4') {
-            if (gridOuter[i].style.order == 3 || gridOuter[i].style.order == 9) {
+            if (gridOuter[i].style.order == gridSize - 2 || gridOuter[i].style.order == (2 * gridSize) - 1) {
                 gridOuter[i].children[0].setAttribute('onclick', 'swipe(this);');
             }
         }
@@ -239,7 +237,6 @@ allowSwipe();
 setInterval(allowSwipe, 200);
 
 
-tryAgain.setAttribute('onclick', 'removeDisplay()');
 
 // timer functions
 
@@ -288,10 +285,10 @@ function restart() {
 }
 
 function randomGrid() {
-    var keys = [1, 2, 3, 4, 5, 6]
+    let keys = [1, 2, 3, 4, 5, 6]
     shuffledKeys = shuffleArray(keys);
     
-    var innerElmOrder = 0;
+    let innerElmOrder = 0;
     var keyOrder = 0;
 
     for (let i = 0; i < 9; i++) {
@@ -317,16 +314,16 @@ var gameOver = false; // a flag which is set to false
 
 function check() {
 
-    var validCollection = [6, 7, 8, 11, 12, 13, 16, 17, 18];
+    let validCollection = [6, 7, 8, 11, 12, 13, 16, 17, 18];
 
-    var connections = 0;
+    let connections = 0;
 
     for (let i = 0; i < 25; i++) {
-        var gridOrder = parseInt(gridOuter[i].style.order);
+        let gridOrder = parseInt(gridOuter[i].style.order);
         if (validCollection.includes(gridOrder)) {
 
             // console.log(gridOrder);
-            var index = validCollection.indexOf(gridOrder);
+            let index = validCollection.indexOf(gridOrder);
 
             if(gridOuter[i].children[0] != undefined) {
                 let x = gridOuter[i].children[0].style.backgroundColor;
@@ -356,6 +353,9 @@ function check() {
 function removeDisplay() {
     displayBox[0].remove();
 }
+
+tryAgain.setAttribute('onclick', 'removeDisplay()');
+
 
 check();
 // setting check function to check continously
