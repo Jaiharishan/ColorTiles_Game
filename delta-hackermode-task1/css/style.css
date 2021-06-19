@@ -1,0 +1,391 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --shadow-color: rgb(224, 224, 224);
+    --primary-color: rgb(0, 192, 255);
+
+}
+
+
+.btn {
+    padding:.5em .9em;
+    outline: none;
+    border:none;
+    color: #000;
+    border-radius: .4em;
+    cursor: pointer;
+}
+
+.btn-active {
+    border: 1px solid rgb(0, 0, 0);
+    background: transparent;
+    transition: all, 0.1s ease;
+}
+
+.btn-active:hover {
+    background: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: #fff;
+}
+
+.wrapper1, .wrapper2 {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    /* border:1px solid black; */
+
+}
+
+.wrapper1 {
+    width:fit-content;
+    margin:1em auto;
+    width:75%;
+}
+
+.wrapper2 {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding:0 .5em;
+}
+
+.grid-container {
+    display: grid;
+    padding:0.25em;
+    border-radius: 1em;
+    box-shadow: 1px 0 10px var(--shadow-color), 0 1px 10px var(--shadow-color), 
+                -1px 0 10px var(--shadow-color), 0 -1px 10px var(--shadow-color);
+}
+
+.grid1 {
+    margin:1em 0;
+    /* grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); */
+    width:270px;
+    height:270px;
+}
+
+.grid2 {
+    margin:20px auto;
+    /* grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr); */
+    width:450px;
+    height:450px;
+    position: relative;
+}
+
+
+
+.heading {
+    color: white;
+    font-size: 3rem;
+}
+
+.item-empty, .new-item-empty {
+    background-color: rgb(48, 48, 48);
+    border-radius: 1em;
+    margin:0.1em;
+
+}
+
+.item, .new-item {
+    border-radius: 1em;
+    width:100%;
+    height:100%;
+}
+
+
+
+/* =================== ALL CONTROLS STYLES ================= */
+
+
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 1em;
+}
+
+/*  NAME INPUT  */
+.input {
+    margin:1em 0;
+    padding:0 0.5em;
+}
+
+.input input {
+    font-size: 1.125rem;
+    outline: none;
+    border: none;
+    border:1px solid black;
+    padding:0.4em 0.8em;
+    border-radius: 1em;
+}
+
+input:focus {
+    border: 1px solid var(--primary-color);
+}
+
+
+/* ============ GAME MODE STYLES ========= */
+
+.game-mode {
+    display: flex;
+    align-items: center;
+    border:1px solid var(--primary-color);
+    border-radius:1em;
+    margin:1em 0;
+    position: relative;
+}
+
+.modes {
+    padding:0.3em 0.9em;
+    font-size: 1.125rem;
+    background: transparent;
+    text-align: center;
+    width:100px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.selector-bg {
+    position:absolute;
+    /* border: 2px solid black; */
+    bottom: -1px;
+    left: -1px;
+    width:50%;
+    height:34px;
+    background: var(--primary-color);
+    border-radius:1em;
+    z-index:-1;
+    transition: 0.3s;
+}
+
+
+/* ================= SCOREBOARD STYLES =============== */
+
+
+.scorecard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+}
+
+.sub-header {
+    font-size: 2rem;
+    padding: .5em 0;
+    border-bottom: 1px solid black;
+    margin:.5em 0;
+    width:90%;
+    text-align: center;
+}
+
+
+.score-details, .score-head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+
+.score-head {
+    margin:0;
+    background: var(--primary-color);
+    color: #fff;
+
+}
+
+.score-details .name, .score-details .score{
+    background: rgb(229, 249, 255);
+    transition: 0.2s;
+}
+
+.score-details .name:hover, .score-details .score:hover{
+    background: rgb(182, 239, 255);
+}
+
+.scorecard .name, .scorecard .score {
+    width: 50%;
+    font-size: 1.25rem;
+    text-align: center;
+    padding:.5em 0;
+}
+
+.scorecard .name {
+    border-right: 1px solid rgb(46, 46, 46);
+}
+
+.timers {
+    min-width: 250px;
+    /* border:1px solid black; */
+    border-radius: .5em;
+    text-align: center;
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 0.5em;
+    /* background: rgb(229, 249, 255); */
+}
+
+.time {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:1em 0;
+}
+
+.time .iconify {
+    font-size: 1.75rem;
+    margin:0 0.1em;
+    color:var(--primary-color);
+}
+
+.buttons {
+    margin:1em auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.buttons button {
+    font-size: 1.25rem;
+    margin:.25em;
+}
+
+
+/* =================== GAME OVER DISPLAY STYLES ================== */
+
+
+.black-border {
+    position: absolute;
+    width:100%;
+    height:100%;
+    z-index: -1;
+    border-radius: 1rem;
+
+}
+
+.display-content {
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    background: rgb(0, 0, 0, 0.7);
+    height:100%;
+    border-radius: 1rem;
+}
+
+.moves {
+    margin:1em 0;
+    display: flex;
+}
+
+.black-border .btn {
+    color: white;
+    border:1px solid white;
+}
+
+
+/* ====================  RESPONSIVE STYLES =================== */
+
+
+@media (max-width:1035px) {
+    .wrapper2 {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .grid2 {
+        width:50%;
+        order:3;
+        width: 400px;
+        height: 400px;
+    }
+    .grid1 {
+        order:1;
+        width: 250px;
+        height: 250px;
+    }
+
+    .controls {
+        order:2;
+        width:36%;
+
+    }
+
+}
+
+@media (max-width:850px) {
+    .controls {
+        width:300px;
+    }
+}
+
+
+@media (max-width:650px) {
+
+    .wrapper2 {
+        flex-direction: row;
+    }
+
+    .wrapper1 {
+        width: 85%;
+    }
+
+    .grid1 {
+        order:1;
+    }
+
+    .grid2 {
+        order:2;
+    }
+
+    .controls {
+        order: 3;
+        width:300px;
+        margin:1em 0;
+    }
+}
+
+@media (max-width:400px) {
+    .grid1 {
+        width:200px;
+        height:200px;
+    }
+
+    .grid2 {
+        width:300px;
+        height:300px;
+    }
+
+
+    /* REDUCING BORDER RADIUS TO LOOK GOOD */
+    .item-empty, .new-item-empty, .new-item, .item {
+        border-radius: .75em;
+    }
+
+
+    /* REDUCING FONT SIZES */
+    .sub-header {
+        font-size: 1.5rem;
+    }
+
+    .scorecard .name, .scorecard .score {
+        font-size: 1rem;
+    }
+
+    .buttons button {
+        font-size: 1.125rem;
+    }
+}
