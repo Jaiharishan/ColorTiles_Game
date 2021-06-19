@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Delta Hacker Mode</title>
+        <!-- links -->
+        <link rel="stylesheet" href="css/style.css">
+        <script defer src="js/main.js"></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    </head>
+    <body>
+
+        <div class="main-container">
+
+        
+            <div class="wrapper2">
+                <audio src="" autoplay></audio>
+                <div class="controls">
+                    <div class="input">
+                        <input type="text" placeholder="enter your name" autocomplete="none">
+                    </div>
+                    <div class="game-mode">
+                        <div class="selector-bg"></div>
+                        <div class="modes" id="easy">easy</div>
+                        <div class="modes" id="normal">normal</div>
+                    </div>
+                    <div class="timers">
+                        <div class="time">
+                            <span class="iconify" data-icon="bx:bxs-time-five" data-inline="false"></span>
+                            <p><span id="seconds">00</span> <span>:</span> <span id="tens">00</span></p>
+                        </div>
+                        
+                        <div class="moves">Moves: <p class="moves-num">0</p></div>
+                    </div>
+
+                    <div class="buttons">
+                        <button class="btn btn-active" id="start-btn">Start</button>
+                        <button class="btn btn-active" id="end-btn">Stop</button>
+                        <button class="btn btn-active" id="reset-btn">Reset</button>
+                    </div>
+
+                    
+                </div>
+                
+                <div class="grid-container grid2">
+                    <!-- MAIN CONTAINER ELEMENTS GOES HERE -->
+                </div>
+
+                <div class="grid-container grid1">
+                    <!-- REFERENCE/SMALL CONTAINER ELEMENTS GOES HERE  -->
+                </div>
+
+            </div>
+            <div class="wrapper1">
+                <div class="scorecard">
+                    <div class="sub-header">Scorecard</div>
+                    <div class="score-head">
+                        <div class="name">Name</div>
+                        <div class="score">Score</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
